@@ -223,10 +223,63 @@ console.log("Filter: ", filteredMapVar);
 
 console.log("Sliced: ", slicedMapVar);
 
-<ul>
-  {filterMap.map((item, index) => (
-    <li>
-      <a href={item.href}>{item.name}</a>
-    </li>
-  ))}
-</ul>;
+let creativeYaht = [
+  {
+    yahtType: "Extended",
+    rooms: 8,
+    bathRooms: 3,
+    isAvailable: true,
+  },
+  {
+    yahtType: "Medium",
+    rooms: 8,
+    bathRooms: 3,
+    isAvailable: false,
+  },
+  {
+    yahtType: "Small",
+    rooms: 8,
+    bathRooms: 3,
+    isAvailable: false,
+  },
+];
+
+let filteredYaht = creativeYaht
+  .filter((item) => !item.isAvailable)
+  .map(function (item) {
+    return item.yahtType;
+  });
+
+console.log("Yahti ne Dispozicion: ", filteredYaht);
+
+let lista = ["mollë", "portokall", "banane", "kumbull", "fresa"];
+
+for (let i = 0; i <= 2; i++) {
+  console.log("Elementi " + (i + 1) + ": " + lista[i]);
+}
+
+let vargu = ["mollë", "portokall", "banane", "kumbull", "fresa"];
+
+vargu.forEach(function (fruta, index) {
+  console.log("Elementi " + (index + 1) + ": " + fruta);
+});
+
+let numrat = [1, 2, 3, 4, 5];
+let shuma = 0;
+
+numrat.forEach(function (numri) {
+  shuma += numri;
+});
+
+console.log("Shuma e numrave është: " + shuma);
+
+let users = [
+  { emri: "Alice", moshë: 30 },
+  { emri: "Bob", moshë: 25 },
+  { emri: "Charlie", moshë: 35 },
+];
+
+users.forEach(function (user) {
+  user.status = "aktive";
+});
+console.log(users);

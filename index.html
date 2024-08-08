@@ -30,5 +30,81 @@
     <h1 id="teksti">Teksti Fillestar</h1>
     <br />
     <button onclick="ndryshoTekstin()">Ndrysho Tekstin</button>
+
+    <ul id="lista"></ul>
+    <ul id="lista1"></ul>
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr />
+    <br />
+    <form id="forma">
+      <div id="fushat-formes">
+        <!-- Fushat e input-it do të shtohen këtu nga JavaScript -->
+      </div>
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <hr />
+    <br />
+    <br />
+    <form action="">
+      <select id="perdoruesit"></select>
+    </form>
+
+    <script>
+      var perdoruesit = ["Alice", "Bob", "Charlie"];
+      var dropdownPerdoruesit = document.getElementById("perdoruesit");
+      perdoruesit.map(function (perdoruesi) {
+        var opsioni = document.createElement("option");
+        opsioni.textContent = perdoruesi;
+        dropdownPerdoruesit.appendChild(opsioni);
+      });
+      // end;
+      var fushat = [
+        { emri: "emri", tipi: "text", etiketa: "Emër:" },
+        { emri: "mbiemri", tipi: "text", etiketa: "Mbiemër:" },
+        { emri: "mosha", tipi: "number", etiketa: "Mosha:" },
+        { emri: "email", tipi: "email", etiketa: "Email:" },
+      ];
+      var forma = document.getElementById("forma");
+      var fushatDiv = document.getElementById("fushat-formes");
+      fushat.forEach(function (fusha) {
+        var label = document.createElement("label");
+        label.textContent = fusha.etiketa;
+        var input = document.createElement("input");
+        input.type = fusha.tipi;
+        input.name = fusha.emri;
+        var div = document.createElement("div");
+        div.appendChild(label);
+        div.appendChild(input);
+        fushatDiv.appendChild(div);
+      });
+      var butoni = document.createElement("button");
+      butoni.type = "submit";
+      butoni.textContent = "Dërgo";
+      forma.appendChild(butoni);
+
+      // end;
+
+      var listaElemente = document.getElementById("lista");
+      for (var i = 1; i <= 1; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = "Element " + i;
+        listaElemente.appendChild(listItem);
+      }
+      // end;
+
+      var listaElement = ["Element 1", "Element 2", "Element 3"];
+      listaElement.forEach(function (elementi) {
+        var lista = document.getElementById("lista1");
+        var listItem = document.createElement("li");
+        listItem.textContent = elementi;
+        lista.appendChild(listItem);
+      });
+    </script>
   </body>
 </html>
